@@ -27,16 +27,16 @@ IF /I "%answr%"=="y" (
 cls
 echo Performing the task
 winget update
-winget upgrade --all --verbose
-winget upgrade --all --include-unknown --verbose
+winget upgrade --all --verbose --accept-package-agreements --accept-source-agreements
+winget upgrade --all --include-unknown --verbose --accept-package-agreements --accept-source-agreements
 cls
 GOTO tilsgeeend
 
 :tilsgee2
 echo Performing the task
-winget update
-winget upgrade --all
-winget upgrade --all --include-unknown
+winget update --silent --accept-package-agreements --accept-source-agreements
+winget upgrade --all --silent --accept-package-agreements --accept-source-agreements
+winget upgrade --all --include-unknown --silent --accept-package-agreements --accept-source-agreements
 cls
 GOTO tilsgeeend
 
